@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voyage-os"
+version = "0.1.0"
+description = "Autonomous AI travel-management agent that plans trips, monitors real-world conditions, evaluates disruptions, and dynamically replans itineraries."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Priyank Sinha", email = "priyanksinha2006@gmail.com" }
+]
+license = { text = "MIT" }
+keywords = ["agentic-ai", "travel-management", "autonomous-agents", "dynamic-replanning", "hackathon"]
+dependencies = [
+    "pydantic>=2.7.0",
+    "streamlit>=1.35.0",
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-cov>=5.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+pythonpath = ["."]
+addopts = "-v --strict-markers"
